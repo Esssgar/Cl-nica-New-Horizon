@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros | New Horizon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body data-page="contacto">
+
+<header class="encabezado">
+    <section class="header-contenido">
+        <section>
+            <h1>Registros</h1>
+            <p>Conoce nuestras opciones de registro y colaboración.</p>
+        </section>
+        <i class="fa-solid fa-file-medical icono-header"></i>
+    </section>
+</header>
+
+<aside class="menu-lateral">
+    <section class="logo-menu">
+        <i class="fa-solid fa-hand-holding-medical"></i>
+        <h2>New Horizon</h2>
+        <p>Centro de rehabilitación</p>
+    </section>
+
+    <nav aria-label="Navegación principal">
+        <ul>
+            <li><a href="index.html" data-view="inicio" class="boton-menu"><i class="fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="informacion.html" data-view="informacion" class="boton-menu"><i class="fa-solid fa-circle-info"></i> Información</a></li>
+            <li><a href="servicios.html" data-view="servicios" class="boton-menu"><i class="fa-solid fa-hand-holding-heart"></i> Servicios</a></li>
+            <li><a href="contacto.html" data-view="contacto" class="boton-menu activo"><i class="fa-solid fa-file-pen"></i> Registros</a></li>
+        </ul>
+    </nav>
+
+    <section class="menu-inferior">
+        <i class="fa-solid fa-heart"></i>
+        <p>Juntos por una nueva oportunidad.</p>
+    </section>
+</aside>
+
+<main class="contenido-principal">
+
+    <section class="titulo-seccion">
+        <span class="etiqueta">ÁREA DE REGISTROS</span>
+        <h2>¿Cómo podemos ayudarte?</h2>
+        <p>Selecciona una de las siguientes opciones para continuar.</p>
+    </section>
+
+    <section id="opcionesRegistros" class="opciones-registros">
+
+        <article class="tarjeta tarjeta-registro">
+            <section class="icono-tarjeta">
+                <i class="fa-solid fa-user-plus"></i>
+            </section>
+
+            <h3>Posibles pacientes</h3>
+
+            <p>
+                Si tú o algún familiar necesita información sobre
+                nuestros servicios de rehabilitación, puedes llenar
+                este formulario. Nos permitirá conocer tu solicitud
+                y establecer contacto para brindar información.
+            </p>
+
+            <button type="button" class="boton-principal" data-formulario="pacientes">
+                Registrar posible paciente
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+
+        <article class="tarjeta tarjeta-registro">
+            <section class="icono-tarjeta">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </section>
+
+            <h3>Donaciones</h3>
+
+            <p>
+                Si deseas colaborar con nuestra institución,
+                puedes registrar tu intención de donar recursos
+                económicos, alimentos, ropa u otros artículos.
+            </p>
+
+            <button type="button" class="boton-principal" data-formulario="donaciones">
+                Registrar donación
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+
+    </section>
+
+    <!-- FORMULARIO DE POSIBLES PACIENTES -->
+
+    <section id="formularioPacientes" class="formulario-ventana oculto">
+
+        <button type="button" class="boton-volver" data-volver>
+            <i class="fa-solid fa-arrow-left"></i> Regresar a registros
+        </button>
+
+        <section class="contenedor-formulario">
+
+            <form class="formulario" id="formRegistro">
+
+                <header class="encabezado-formulario">
+                    <section class="icono-principal">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </section>
+                    <h2>Registro de posibles pacientes</h2>
+                    <p>Completa los datos para solicitar información sobre nuestros servicios.</p>
+                </header>
+
+                <section class="contenido-formulario">
+
+                    <section class="campo">
+                        <label for="paciente">Nombre de la persona interesada</label>
+                        <input type="text" id="paciente" name="paciente"
+                            placeholder="Nombre completo" maxlength="100" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="responsable">Nombre de quien realiza el registro</label>
+                        <input type="text" id="responsable" name="responsable"
+                            placeholder="Nombre completo" maxlength="100" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="telefonoRegistro">Número telefónico</label>
+                        <input type="tel" id="telefonoRegistro" name="telefono"
+                            placeholder="Ejemplo: 4441234567" maxlength="20"
+                            pattern="[0-9+\-\s()]{10,20}" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="tipoApoyo">¿Qué información necesitas?</label>
+                        <select id="tipoApoyo" name="tipoApoyo" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Rehabilitación">Rehabilitación</option>
+                            <option value="Alojamiento">Alojamiento</option>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Atención psicológica">Atención psicológica</option>
+                            <option value="Información general">Información general</option>
+                        </select>
+                    </section>
+
+                    <section class="campo">
+                        <label for="mensajeRegistro">Información adicional</label>
+                        <textarea id="mensajeRegistro" name="mensaje"
+                            rows="5" maxlength="1000"
+                            placeholder="Escribe información adicional sobre tu solicitud..."></textarea>
+                    </section>
+
+                    <section class="aceptacion">
+                        <input type="checkbox" id="aceptoRegistro" required>
+                        <label for="aceptoRegistro">
+                            Confirmo que los datos son correctos y autorizo
+                            que se utilicen para dar seguimiento a mi solicitud.
+                        </label>
+                    </section>
+
+                    <section class="acciones">
+                        <button type="submit" class="boton">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span class="texto-boton">Enviar registro</span>
+                            <span class="spinner" aria-hidden="true"></span>
+                        </button>
+
+                        <p class="confidencialidad">
+                            <i class="fa-solid fa-lock"></i>
+                            La información será tratada de manera confidencial.
+                        </p>
+
+                        <p id="respuestaRegistro" class="respuesta-formulario"
+                            role="status" aria-live="polite"></p>
+                    </section>
+
+                </section>
+            </form>
+
+        </section>
+    </section>
+
+    <!-- FORMULARIO DE DONACIONES -->
+
+    <section id="formularioDonaciones" class="formulario-ventana oculto">
+
+        <button type="button" class="boton-volver" data-volver>
+            <i class="fa-solid fa-arrow-left"></i> Regresar a registros
+        </button>
+
+        <section class="contenedor-formulario">
+
+            <form class="formulario" id="formDonaciones">
+
+                <header class="encabezado-formulario">
+                    <section class="icono-principal">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </section>
+                    <h2>Registro de donaciones</h2>
+                    <p>Gracias por tu interés en colaborar con nuestra institución.</p>
+                </header>
+
+                <section class="contenido-formulario">
+
+                    <section class="campo">
+                        <label for="nombreDonante">Nombre del donante</label>
+                        <input type="text" id="nombreDonante" name="nombre"
+                            placeholder="Nombre completo" maxlength="100" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="telefonoDonante">Número telefónico</label>
+                        <input type="tel" id="telefonoDonante" name="telefono"
+                            placeholder="Ejemplo: 4441234567" maxlength="20"
+                            pattern="[0-9+\-\s()]{10,20}" required>
+                    </section>
+
+                    <section class="campo">
+                        <label for="tipoDonacion">Tipo de donación</label>
+                        <select id="tipoDonacion" name="donacion" required>
+                            <option value="">Selecciona el tipo de donación</option>
+                            <option value="Dinero">Apoyo económico</option>
+                            <option value="Medicamentos">Medicamentos</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Ropa">Ropa</option>
+                            <option value="Material médico">Material médico</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </section>
+
+                    <section class="campo">
+                        <label for="mensajeDonante">Detalles de la donación</label>
+                        <textarea id="mensajeDonante" name="mensaje"
+                            rows="5" maxlength="1000"
+                            placeholder="Describe tu aportación o escribe algún comentario..."></textarea>
+                    </section>
+
+                    <section class="aceptacion">
+                        <input type="checkbox" id="aceptoDonacion" required>
+                        <label for="aceptoDonacion">
+                            Confirmo que los datos proporcionados son correctos
+                            y acepto que se comuniquen conmigo para dar
+                            seguimiento a mi donación.
+                        </label>
+                    </section>
+
+                    <section class="acciones">
+                        <button type="submit" class="boton">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="texto-boton">Enviar donación</span>
+                            <span class="spinner" aria-hidden="true"></span>
+                        </button>
+
+                        <p class="confidencialidad">
+                            <i class="fa-solid fa-lock"></i>
+                            La información será tratada de manera confidencial.
+                        </p>
+
+                        <p id="respuestaDonacion" class="respuesta-formulario"
+                            role="status" aria-live="polite"></p>
+                    </section>
+
+                </section>
+            </form>
+
+        </section>
+    </section>
+
+</main>
+
+<footer class="pie-pagina">
+    <section>
+        <h3>Clínica New Horizon</h3>
+        <p>Gracias por confiar en nosotros.</p>
+    </section>
+    <section>
+        <p>Localidad: Hidalgo</p>
+        <p>© 2026 Clínica New Horizon.</p>
+    </section>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
